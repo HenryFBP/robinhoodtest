@@ -6,8 +6,8 @@ authors = ["Henry Post <HenryFBP@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.6"
-#pyrh = "*"
-pyrh = { git = "https://github.com/HenryFBP/pyrh", branch = "fix-pypi-release" }
+#pyrhhfbp = "*" # we can do this if we want to pull from pypi...but I'd rather pull from my github repo...
+pyrhhfbp = { git = "https://github.com/HenryFBP/pyrhhfbp", branch = "master" }
 
 
 [tool.poetry.dev-dependencies]

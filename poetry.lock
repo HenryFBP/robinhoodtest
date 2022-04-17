@@ -48,9 +48,9 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
-name = "pyrh"
-version = "2.0"
-description = "Unofficial Robinhood Python API"
+name = "pyrhhfbp"
+version = "2.0.2rc"
+description = "Unofficial Robinhood Python API...forked by HenryFBP to update an outdated PyPI package"
 category = "main"
 optional = false
 python-versions = "^3.6"
@@ -70,9 +70,9 @@ notebook = ["notebook (>=6.0.3,<7.0.0)", "python-dotenv (>=0.13.0,<0.14.0)"]
 
 [package.source]
 type = "git"
-url = "https://github.com/HenryFBP/pyrh"
-reference = "fix-pypi-release"
-resolved_reference = "488d813bd31c29751b66654c3a8ef04551ffac39"
+url = "https://github.com/HenryFBP/pyrhhfbp"
+reference = "master"
+resolved_reference = "56b3bb88ffa4027e83782f57954c014a897af933"
 
 [[package]]
 name = "python-dateutil"
@@ -156,7 +156,7 @@ typing-extensions = {version = ">=3.7.4", markers = "python_version < \"3.8\""}
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "f0905e2d5f2e06d2de3fbcfd6fe9df6224c62028683d2854d9a29d699672693f"
+content-hash = "052668cdf0db4b21ab0f1277ab925d6092c1eaa0d1cbbb5057307b453768b95b"
 
 [metadata.files]
 certifi = [
@@ -249,7 +249,7 @@ multidict = [
     {file = "multidict-5.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:c9631c642e08b9fff1c6255487e62971d8b8e821808ddd013d8ac058087591ac"},
     {file = "multidict-5.2.0.tar.gz", hash = "sha256:0dd1c93edb444b33ba2274b66f63def8a327d607c6c790772f448a53b6ea59ce"},
 ]
-pyrh = []
+pyrhhfbp = []
 python-dateutil = [
     {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
     {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
