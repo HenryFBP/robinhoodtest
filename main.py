@@ -3,6 +3,8 @@ import os
 from typing import Dict
 from pyrhhfbp import Robinhood, dump_session, load_session
 
+from someutils import user_prompt_yn
+
 LOGIN_CRED_PATH = os.path.abspath(os.path.expanduser('~/.robinhood/login.json'))
 SESSION_PICKLE_PATH = os.path.abspath(os.path.expanduser('~/.robinhood/session.json'))
 
@@ -43,3 +45,12 @@ if __name__ == '__main__':
         dump_session(rh, SESSION_PICKLE_PATH)
 
     # aaplprices = rh.get_quote_list("AAPL")
+    xela_price = rh.quote_data('XELA')['last_extended_hours_trade_price']
+    print("XELA: costs ${}".format(xela_price))
+
+    if user_prompt_yn("Buy 1 XELA for {}?".format(xela_price)):
+        print("im BUYIIING XELA OOOOUGHHHHH @w@")
+    else:
+        print("k, not buying")
+
+    # rh.buy
