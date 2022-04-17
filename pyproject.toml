@@ -6,7 +6,9 @@ authors = ["Henry Post <HenryFBP@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.6"
-pyrh = "^2.0"
+#pyrh = "*"
+pyrh = { git = "https://github.com/HenryFBP/pyrh", branch = "fix-pypi-release" }
+
 
 [tool.poetry.dev-dependencies]
 
