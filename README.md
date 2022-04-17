@@ -1,3 +1,10 @@
+# running
+
+    pip install poetry
+    poetry install
+    poetry shell
+    python ./main.py
+
 # issues
 
 ## pyrh
