@@ -50,23 +50,38 @@ if __name__ == '__main__':
         dump_session(rh, RH_SESSION_JSON_PATH)
 
     # aaplprices = rh.get_quote_list("AAPL")
-    xela_price = rh.quote_data('XELA')['last_extended_hours_trade_price']
-    xela_amt = 3
-    print("XELA: costs ${}".format(xela_price))
+    stock_symbol = 'XELA'
+    stock_quote_data = rh.quote_data(stock_symbol)
+    stock_price = stock_quote_data['last_extended_hours_trade_price']
+    stock_quantity = 3
+    print("{}: costs ${}".format(stock_symbol, stock_price))
 
-    yesmsg = "Yes, submit BUY order for {} XELA.".format(xela_amt)
-    nomsg = "No, do not submit BUY order for {} XELA.".format(xela_amt)
+    yesmsg = "Yes, submit BUY order for {} {}.".format(stock_quantity, stock_symbol)
+    nomsg = "No, do not submit BUY order for {} {}.".format(stock_quantity, stock_symbol)
+    promptmsg = "Submit BUY order of {} {} for ${:.4f} total?".format(
+        stock_quantity,
+        stock_symbol,
+        (stock_quantity * float(stock_price))
+    )
+
     if user_prompt_yn(
-            "Submit BUY order of {} XELA for ${:.4f} total?".format(xela_amt, (xela_amt * float(xela_price))),
+            promptmsg,
             {
                 'yes': yesmsg,
                 'no': nomsg
             },
             successval=yesmsg):
 
-        print("im BUYIIING XELA OOOOUGHHHHH @w@")
+        print("im BUYIIING {} {} OOOOUGHHHHH @w@ $_$ :DDDDD".format(stock_quantity, stock_symbol))
 
-        rh.place_market_buy_order(instrument_URL='wewwers.com')
+        result = rh.place_market_buy_order(
+            instrument_URL=stock_quote_data['instrument'],
+            symbol=stock_symbol,
+            quantity=stock_quantity
+        )
+
+        print("result:")
+        print(result)
 
     else:
         print("k, not buying any XELA... stocks broke. understandable, have a great day")
