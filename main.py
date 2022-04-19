@@ -77,12 +77,10 @@ if __name__ == '__main__':
 
         print("im BUYIIING {} {} OOOOUGHHHHH @w@ $_$ :DDDDD".format(stock_quantity, stock_symbol))
 
-        result = rh.place_market_buy_order(
-            instrument_URL=stock_quote_data['instrument'],
-            symbol=stock_symbol,
-            quantity=stock_quantity
-        )
-
+        result = rh.place_buy_order(
+            instrument=stock_quote_data,
+            quantity=stock_quantity,
+            ask_price=stock_price)
         print("result:")
         print(result)
 
