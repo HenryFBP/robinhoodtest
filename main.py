@@ -13,6 +13,9 @@ if not os.path.exists(RH_CONFIG_PATH):
 RH_LOGIN_CRED_PATH = os.path.join(RH_CONFIG_PATH, 'login.json')
 RH_SESSION_JSON_PATH = os.path.join(RH_CONFIG_PATH, 'session.json')
 
+if not os.path.exists(RH_LOGIN_CRED_PATH):
+    raise Exception("login file {} does not exist. please create it.".format(RH_LOGIN_CRED_PATH))
+
 
 def get_robinhood_login_json(path=RH_LOGIN_CRED_PATH) -> Dict:
     with open(path) as fh:
