@@ -1,29 +1,41 @@
 $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
 $session.UserAgent = "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Mobile Safari/537.36"
 Invoke-WebRequest -UseBasicParsing -Uri "https://api.robinhood.com/orders/" `
--Method "POST" `
--WebSession $session `
--Headers @{
-"authority"="api.robinhood.com"
-  "method"="POST"
-  "path"="/orders/"
-  "scheme"="https"
-  "accept"="*/*"
-  "accept-encoding"="gzip, deflate, br"
-  "accept-language"="en-US,en;q=0.9"
-  "authorization"="Bearer coolbeans420"
-  "dnt"="1"
-  "origin"="https://robinhood.com"
-  "referer"="https://robinhood.com/"
-  "sec-ch-ua"="`" Not A;Brand`";v=`"99`", `"Chromium`";v=`"100`", `"Google Chrome`";v=`"100`""
-  "sec-ch-ua-mobile"="?1"
-  "sec-ch-ua-platform"="`"Android`""
-  "sec-fetch-dest"="empty"
-  "sec-fetch-mode"="cors"
-  "sec-fetch-site"="same-site"
+  -Method "POST" `
+  -WebSession $session `
+  -Headers @{
+  "authority"          = "api.robinhood.com"
+  "method"             = "POST"
+  "path"               = "/orders/"
+  "scheme"             = "https"
+  "accept"             = "*/*"
+  "accept-encoding"    = "gzip, deflate, br"
+  "accept-language"    = "en-US,en;q=0.9"
+  "authorization"      = "Bearer coolbeans420"
+  "dnt"                = "1"
+  "origin"             = "https://robinhood.com"
+  "referer"            = "https://robinhood.com/"
+  "sec-ch-ua"          = "`" Not A;Brand`";v=`"99`", `"Chromium`";v=`"100`", `"Google Chrome`";v=`"100`""
+  "sec-ch-ua-mobile"   = "?1"
+  "sec-ch-ua-platform" = "`"Android`""
+  "sec-fetch-dest"     = "empty"
+  "sec-fetch-mode"     = "cors"
+  "sec-fetch-site"     = "same-site"
 } `
--ContentType "application/json" `
--Body "{`"account`":`"https://api.robinhood.com/accounts/furry/`",`"extended_hours`":false,`"instrument`":`"https://api.robinhood.com/instruments/af3ee8c5-5548-4ed0-bb0b-8e1df1cafa8f/`",`"quantity`":`"1`",`"ref_id`":`"58b833bc-276d-473d-923b-ad94b5a687d3`",`"side`":`"buy`",`"symbol`":`"XELA`",`"time_in_force`":`"gfd`",`"trigger`":`"immediate`",`"type`":`"market`",`"price`":`"0.4013`"}"
+  -ContentType "application/json" `
+  -Body "{`"account`":`"https:
+//api.robinhood.com/accounts/furry/`",`"extended_hours`":
+false,`"instrument`":
+`"https:
+//api.robinhood.com/instruments/af3ee8c5-5548-4ed0-bb0b-8e1df1cafa8f/`",`"quantity`":
+`"1`",`"ref_id`":
+`"58b833bc-276d-473d-923b-ad94b5a687d3`",`"side`":
+`"buy`",`"symbol`":
+`"XELA`",`"time_in_force`":
+`"gfd`",`"trigger`":
+`"immediate`",`"type`":
+`"market`",`"price`":
+`"0.4013`"}"
 
 # and then they respond with... (copied from HAR)
 
