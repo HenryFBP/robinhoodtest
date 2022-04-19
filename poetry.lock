@@ -72,7 +72,7 @@ notebook = ["notebook (>=6.0.3,<7.0.0)", "python-dotenv (>=0.13.0,<0.14.0)"]
 type = "git"
 url = "https://github.com/HenryFBP/pyrhhfbp"
 reference = "master"
-resolved_reference = "eaefc4c19627dd49de25fb7dbc1abc17c580b23a"
+resolved_reference = "5ca26ef23626cd590df313375a635ed0a6b91448"
 
 [[package]]
 name = "python-dateutil"
