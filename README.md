@@ -7,6 +7,10 @@
 
 # issues
 
+## why le git dep no updato?
+
+https://github.com/python-poetry/poetry/issues/3958
+
 ## pyrh
 
 see https://github.com/robinhood-unofficial/pyrh/issues/251
